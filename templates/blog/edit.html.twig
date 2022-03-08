@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit Blog{% endblock %}
+
+{% block body %}
+    <div class="containerlogin">
+        <h1>Editar Entrada</h1>
+
+        {{ include('blog/_form.html.twig', {'button_label': 'Editar'}) }}
+
+        <a href="{{ path('app_blog_index') }}" class="btn btn-light">Volver</a>
+    </div>
+{% endblock %}

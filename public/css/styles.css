@@ -1,0 +1,68 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#header{
+    width: 100%;
+    font-size: 35px;
+    margin-bottom: 25px;
+}
+
+li{
+    width: 15%;
+}
+
+.nav{
+    margin-left: 30%;
+}
+a{
+    text-decoration: none;
+}
+
+.container{
+    margin-top: 50px;
+    width: 100%;
+    text-align: center;
+}
+
+#caja-texto{
+    font-size: 50px;
+}
+
+.containerlogin{
+    margin: 0 auto;
+    width: 25%;
+    text-align: center;
+}
+.btn{
+    margin-top: 10px !important;
+}
+
+.containerBlog{
+    width: 60%;
+    text-align: center;
+    display: flex;
+    margin: 0 auto;
+}
+
+.table-blog, .blog{
+    width: 49%;
+    margin: 0 auto;
+}
+
+img{
+    width: 100%;
+}
+
+.table td{
+    padding: 0px;
+}
+
+.autor, .texto{
+    display: block;
+    width: 100%;
+    text-align: left;
+    margin: 20px 0px;
+}
+

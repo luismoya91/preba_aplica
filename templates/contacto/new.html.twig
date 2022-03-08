@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Contacto{% endblock %}
+
+{% block body %}
+    <div class="containerlogin">
+        <h1>Contacto</h1>
+
+        {{ include('contacto/_form.html.twig') }}
+
+        <a href="{{ path('app_contacto_index') }} " class="btn btn-light">Volver</a>
+    </div>
+{% endblock %}

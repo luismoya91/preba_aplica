@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blogs{% endblock %}
+
+{% block body %}
+    <div class="containerBlog">
+    {% if blogs is empty %}
+        <div class="caja-texto">
+            No existen Entradas
+        </div>
+        <a href="{{ path('app_blog_new') }}">Crear entrada</a>
+    {% else %}
+        <div class="table-blog">
+            <table class="table">
+                {% for blog in blogs %}
+                    <tr>
+                        <td>&#149;</td>
+                        <td>{{ blog.titulo }}</td>
+                        <td>
+                            <a href="{{ path('app_blog_show', {'id': blog.id}) }}">Ver</a>
+                            {% if app.user %}
+                                <a href="{{ path('app_blog_edit', {'id': blog.id}) }}">Editar</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="blog">
+            <h1>{{ blogs[0].titulo }}</h1>
+            <img src="{{ asset('uploads/images/' ~ blogs[0].imagen) }}" alt="">
+            <div class="autor">
+                {{blogs[0].Autor}}/{{blogs[0].Fecha|date('d-m-Y')}}
+            </div>
+            <div class="texto">
+                <p>
+                    {{blogs[0].Texto}}
+                </p>
+            </div>
+            {% if app.user %}
+                 <a href="{{ path('app_blog_new') }}" class="btn btn-secondary">Crear Entrada</a>
+            {% endif %}
+           
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

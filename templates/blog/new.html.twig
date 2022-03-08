@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Blog{% endblock %}
+
+{% block body %}
+    <div class="containerlogin">
+    
+    <h1>Nueva entrada</h1>
+
+    {{ include('blog/_form.html.twig') }}
+
+    <a href="{{ path('app_blog_index') }}" class="btn btn-light">Volver</a>
+    </div>
+{% endblock %}

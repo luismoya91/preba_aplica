@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Blog{% endblock %}
+
+{% block body %}
+    <div class="container">
+    <h1>Entrada {{ blog.id }}</h1>
+        <div class="blog">
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th>Id</th>
+                        <td>{{ blog.id }}</td>
+                    </tr>
+                    <tr>
+                        <th>Autor</th>
+                        <td>{{ blog.autor }}</td>
+                    </tr>
+                    <tr>
+                        <th>Titulo</th>
+                        <td>{{ blog.titulo }}</td>
+                    </tr>
+                    <tr>
+                        <th>Fecha</th>
+                        <td>{{ blog.fecha ? blog.fecha|date('Y-m-d') : '' }}</td>
+                    </tr>
+                    <tr>
+                        <th>Imagen</th>
+                        <td><img src="{{ asset('uploads/images/' ~ blog.imagen) }}" alt=""></td>
+                    </tr>
+                    <tr>
+                        <th>Texto</th>
+                        <td>{{ blog.texto }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <a href="{{ path('app_blog_index') }}" class="btn btn-light">Volver</a>
+            {% if app.user %}
+                <a href="{{ path('app_blog_edit', {'id': blog.id}) }}" class="btn btn-success">Editar</a>
+            {% endif %}
+
+        </div>
+    </div>
+{% endblock %}
